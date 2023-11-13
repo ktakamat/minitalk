@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_unbr.c                                    :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/04 01:32:15 by machi             #+#    #+#             */
-/*   Updated: 2023/11/13 22:09:02 by machi            ###   ########.fr       */
+/*   Created: 2023/06/29 12:49:12 by machi             #+#    #+#             */
+/*   Updated: 2023/11/13 22:26:02 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_minitalk.h"
 
-int	count_udigits(unsigned int n)
+int	count_digits(int n)
 {
 	int	count;
 
 	count = 0;
+	if (n <= 0)
+		count++;
 	while (n)
 	{
 		count++;
@@ -25,31 +27,41 @@ int	count_udigits(unsigned int n)
 	return (count);
 }
 
-void	ft_putunbr(unsigned int n)
+void	ft_putnbr(int n)
 {
 	if (0 <= n && n < 10)
 		ft_print_char(n + '0');
 	else if (10 <= n)
 	{
-		ft_putunbr(n / 10);
+		ft_putnbr(n / 10);
 		ft_print_char(n % 10 + '0');
+	}
+	else
+	{
+		if (n == INT_MIN)
+			ft_print_str("-2147483648");
+		else
+		{
+			ft_print_char('-');
+			ft_putnbr(-1 * n);
+		}
 	}
 }
 
-int	ft_print_unbr(unsigned int n)
+int	ft_print_nbr(int n)
 {
 	int	count;
 
 	count = 0;
 	if (n == 0)
 	{
-		ft_putunbr(0);
+		ft_putnbr(0);
 		count++;
 	}
 	else
 	{
-		ft_putunbr(n);
-		count += count_udigits(n);
+		ft_putnbr(n);
+		count += count_digits(n);
 	}
 	return (count);
 }

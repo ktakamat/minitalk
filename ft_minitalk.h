@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_minitalk.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:27:07 by machi             #+#    #+#             */
-/*   Updated: 2023/11/13 22:12:49 by machi            ###   ########.fr       */
+/*   Updated: 2023/11/13 22:31:40 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void		ft_putchar(char c);
 int			ft_print_char(char c);
 int			count_hex(unsigned int n);
 void		ft_puthex(unsigned int n, const char format);
+int			ft_print_hex(unsigned int n, const char format);
 int			count_digits(int n);
 void		ft_putnbr(int n);
 int			ft_print_nbr(int n);

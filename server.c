@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:25:52 by machi             #+#    #+#             */
-/*   Updated: 2023/11/13 22:00:22 by machi            ###   ########.fr       */
+/*   Updated: 2023/11/13 22:38:50 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(void)
 	ft_printf("%d", getpid());
 	if (signal(SIGUSR1, signalhandler) == SIG_ERR)
 	{
-		ft_printf("error");
+		ft_printf("Error\n");
 		return (1);
 	}
 	if (signal(SIGUSR2, signalhandler) == SIG_ERR)

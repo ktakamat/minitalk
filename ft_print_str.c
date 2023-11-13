@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/28 14:42:12 by machi             #+#    #+#             */
-/*   Updated: 2023/11/13 22:01:54 by machi            ###   ########.fr       */
+/*   Created: 2023/07/03 11:51:17 by machi             #+#    #+#             */
+/*   Updated: 2023/11/13 22:26:15 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_minitalk.h"
 
-void	ft_putchar(char c)
+int	ft_print_str(char *str)
 {
-	write(1, &c, 1);
-}
-
-int	ft_print_char(char c)
-{
-	int	count;
+	int		count;
+	char	*str_null;
 
 	count = 0;
-	ft_putchar(c);
-	count++;
+	str_null = "(null)";
+	if (!str)
+	{
+		while (*str_null)
+		{
+			count += ft_print_char(*str_null);
+			str_null++;
+		}
+	}
+	else
+	{
+		while (*str)
+		{
+			count += ft_print_char(*str);
+			str++;
+		}
+	}
 	return (count);
 }

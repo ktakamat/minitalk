@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: machi <machi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ktakamat <ktakamat@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:16:44 by machi             #+#    #+#             */
-/*   Updated: 2023/11/13 20:26:18 by machi            ###   ########.fr       */
+/*   Updated: 2023/11/13 22:39:14 by ktakamat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	send_char(const pid_t pid, char c)
 			usleep(800);
 			if (kill(pid, SIGUSR1) == -1)
 			{
-				ft_printf("error");
+				ft_printf("Error\n");
 				exit(1);
 			}
 		}
@@ -33,7 +33,7 @@ void	send_char(const pid_t pid, char c)
 			usleep(800);
 			if (kill(pid, SIGUSR2) == -1)
 			{
-				ft_printf("error");
+				ft_printf("Error\n");
 				exit(1);
 			}
 		}
